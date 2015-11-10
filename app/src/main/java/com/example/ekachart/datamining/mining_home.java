@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class mining_home extends AppCompatActivity {
-    private Button start;
+    private Button start,about;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,15 @@ public class mining_home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), survey.class);
+                startActivity(i);
+            }
+        });
+
+        about = (Button)findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), name.class);
                 startActivity(i);
             }
         });

@@ -18,8 +18,11 @@
         </activity>
             <activity android:name="com.example.ekachart.datamining.survey"
                 android:screenOrientation="portrait"/>
-            <activity android:name="com.example.ekachart.datamining.empty"
+            <activity android:name="com.example.ekachart.datamining.result"
                 android:screenOrientation="portrait"/>
+            <activity android:name="com.example.ekachart.datamining.name"
+                android:screenOrientation="portrait"/>
+
 
     </application>
 

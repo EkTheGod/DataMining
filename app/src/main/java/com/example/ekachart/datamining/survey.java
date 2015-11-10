@@ -37,37 +37,6 @@ public class survey extends Activity {
         buttonreset();
         addListSpinner();
 
-        //addListenerOnButton();
-
-    }
-
-
-    private void addListenerOnButton() {
-
-        show.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent sentopage = new Intent(getApplicationContext(), empty.class);
-                sentopage.putExtra("No1",No1);
-                sentopage.putExtra("No2",No2);
-                sentopage.putExtra("No3",No3);
-                No4 = String.valueOf(spin.getSelectedItem());
-                sentopage.putExtra("No4",No4);
-                sentopage.putExtra("No5",No5);
-                sentopage.putExtra("No6",No6);
-                sentopage.putExtra("No7",No7);
-                sentopage.putExtra("No8",No8);
-                sentopage.putExtra("No9", No9);
-                sentopage.putExtra("No10", No10);
-                sentopage.putExtra("No11", No11);
-                startActivity(sentopage);
-
-            }
-
-        });
-
     }
 
 
@@ -86,7 +55,6 @@ public class survey extends Activity {
         radio8 =  (RadioGroup)findViewById(R.id.radio8);
         radio9 =  (RadioGroup)findViewById(R.id.radio9);
         radio10 =  (RadioGroup)findViewById(R.id.radio10);
-        radio11 =  (RadioGroup)findViewById(R.id.radio11);
 
     }
 
@@ -94,7 +62,7 @@ public class survey extends Activity {
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent sentopage = new Intent(getApplicationContext(), empty.class);
+                Intent sentopage = new Intent(getApplicationContext(), result.class);
                 sentopage.putExtra("No1",No1);
                 sentopage.putExtra("No2", No2);
                 sentopage.putExtra("No3", No3);
@@ -106,9 +74,8 @@ public class survey extends Activity {
                 sentopage.putExtra("No8",No8);
                 sentopage.putExtra("No9", No9);
                 sentopage.putExtra("No10", No10);
-                sentopage.putExtra("No11", No11);
 
-                if(No1=="" || No2=="" || No3=="" || No4=="" || No5=="" || No6=="" || No7=="" || No8=="" || No9=="" || No10=="" || No11=="")
+                if(No1=="" || No2=="" || No3=="" || No4=="" || No5=="" || No6=="" || No7=="" || No8=="" || No9=="" || No10=="")
                     Toast.makeText(survey.this, "คุณยังทำแบบทดสอบไม่ครบ", Toast.LENGTH_SHORT).show();
                 else
                     startActivity(sentopage);
@@ -140,8 +107,6 @@ public class survey extends Activity {
                 No9 = "";
                 radio10.clearCheck();
                 No10 = "";
-                radio11.clearCheck();
-                No11 = "";
             }
         });
     }
@@ -267,11 +232,6 @@ public class survey extends Activity {
             case R.id.radio10_2:
                 if (checked) No10 = "หอ"; break;
 
-            //ข้อ 11
-            case R.id.radio11_1:
-                if (checked) No11 = "บ้าน"; break;
-            case R.id.radio11_2:
-                if (checked) No11 = "หอ"; break;
         }
 
     }
