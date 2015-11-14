@@ -460,43 +460,6 @@
                 android:textColor="#010101" />
         </RadioGroup>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="10.คุณต้องการพักอยู่หอหรืออยู่บ้าน"
-            android:id="@+id/textView10"
-            android:layout_marginTop="20dp"
-            android:textSize="20dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="#010101" />
-
-        <RadioGroup
-            android:id="@+id/radio10"
-            android:layout_below="@+id/textView10"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp">
-
-            <RadioButton
-                android:id="@+id/radio10_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="บ้าน"
-                android:onClick="onRadioButtonClicked"
-                android:textColor="#010101" />
-            <RadioButton
-                android:id="@+id/radio10_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="หอ"
-                android:onClick="onRadioButtonClicked"
-                android:layout_marginLeft="20dp"
-                android:textColor="#010101" />
-        </RadioGroup>
-
         <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

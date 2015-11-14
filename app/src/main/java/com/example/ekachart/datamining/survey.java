@@ -20,13 +20,11 @@ import java.util.ArrayList;
  * Created by Ekachart on 8/11/2558.
  */
 public class survey extends Activity {
-    private RadioGroup radio1,radio2,radio3,radio5,radio6,radio7,radio8,radio9,radio10,radio11;
-    private RadioButton ra1,ra2,ra3,ra5,ra6,ra7,ra8,ra9,ra10,ra11;
+    private RadioGroup radio1,radio2,radio3,radio5,radio6,radio7,radio8,radio9;
     private Spinner spin;
-    private Boolean n34 = true;
     private EditText edit34;
     private Button show,reset;
-    private String No1 ="",No2="",No3="",No4="",No5="",No6="",No7="",No8="",No9="",No10="",No11="";
+    private String No1 ="",No2="",No3="",No4="",No5="",No6="",No7="",No8="",No9="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +52,6 @@ public class survey extends Activity {
         radio7 =  (RadioGroup)findViewById(R.id.radio7);
         radio8 =  (RadioGroup)findViewById(R.id.radio8);
         radio9 =  (RadioGroup)findViewById(R.id.radio9);
-        radio10 =  (RadioGroup)findViewById(R.id.radio10);
 
     }
 
@@ -73,9 +70,8 @@ public class survey extends Activity {
                 sentopage.putExtra("No7",No7);
                 sentopage.putExtra("No8",No8);
                 sentopage.putExtra("No9", No9);
-                sentopage.putExtra("No10", No10);
 
-                if(No1=="" || No2=="" || No3=="" || No4=="" || No5=="" || No6=="" || No7=="" || No8=="" || No9=="" || No10=="")
+                if(No1=="") //|| No2=="" || No3=="" || No4=="" || No5=="" || No6=="" || No7=="" || No8=="" || No9=="")
                     Toast.makeText(survey.this, "คุณยังทำแบบทดสอบไม่ครบ", Toast.LENGTH_SHORT).show();
                 else
                     startActivity(sentopage);
@@ -105,8 +101,6 @@ public class survey extends Activity {
                 No8 = "";
                 radio9.clearCheck();
                 No9 = "";
-                radio10.clearCheck();
-                No10 = "";
             }
         });
     }
@@ -131,9 +125,9 @@ public class survey extends Activity {
 
             //ข้อ 2
             case R.id.male:
-                if (checked) No2 = "male"; break;
+                if (checked) No2 = "1"; break;
             case R.id.female:
-                if (checked) No2 ="female"; break;
+                if (checked) No2 ="2"; break;
 
             //ข้อ 3
             case R.id.radio31:
@@ -174,63 +168,57 @@ public class survey extends Activity {
 
             //ข้อ 5
             case R.id.krung:
-                if (checked) No5 = "กรุงเทพ"; break;
+                if (checked) No5 = "1"; break;
             case R.id.around:
-                if (checked) No5 = "ปริมณฑล"; break;
+                if (checked) No5 = "2"; break;
             case R.id.other:
-                if (checked) No5 = "ต่างจังหวัด"; break;
+                if (checked) No5 = "3"; break;
 
             //ข้อ 6
             case R.id.radio61:
-                if (checked) No6 = "น้อยกว่า 3,000 บาท"; break;
+                if (checked) No6 = "1"; break;
             case R.id.radio62:
-                if (checked) No6 = "3,000 - 6,000 บาท"; break;
+                if (checked) No6 = "2"; break;
             case R.id.radio63:
-                if (checked) No6 = "6,001 - 9,000 บาท"; break;
+                if (checked) No6 = "3"; break;
             case R.id.radio64:
-                if (checked) No6 = "มากกว่า 9,000 บาท"; break;
+                if (checked) No6 = "4"; break;
 
             //ข้อ 7
             case R.id.radio71:
-                if (checked) No7 = "น้อยกว่า  30 นาที"; break;
+                if (checked) No7 = "1"; break;
             case R.id.radio72:
-                if (checked) No7 = "30 - 60 นาที"; break;
+                if (checked) No7 = "2"; break;
             case R.id.radio73:
-                if (checked) No7 = "1 ชั่วโมง – 1 ชั่วโมงครึ่ง"; break;
+                if (checked) No7 = "3"; break;
             case R.id.radio74:
-                if (checked) No7 = "1 ชั่วโมงครึ่ง - 2 ชั่วโมง"; break;
+                if (checked) No7 = "4"; break;
             case R.id.radio75:
-                if (checked) No7 = "2 ชั่วโมงครึ่ง - 3 ชั่วโมง"; break;
+                if (checked) No7 = "5"; break;
             case R.id.radio76:
-                if (checked) No7 = "มากกว่า 3 ชั่วโมง"; break;
+                if (checked) No7 = "6"; break;
 
             //ข้อ 8
             case R.id.radio81:
-                if (checked) No8 = "น้อยกว่า 50 บาท"; break;
+                if (checked) No8 = "1"; break;
             case R.id.radio82:
-                if (checked) No8 = "51 - 100 บาท"; break;
+                if (checked) No8 = "2"; break;
             case R.id.radio83:
-                if (checked) No8 = "101 - 150 บาท"; break;
+                if (checked) No8 = "3"; break;
             case R.id.radio84:
-                if (checked) No8 = "151 - 200 บาท"; break;
+                if (checked) No8 = "4"; break;
             case R.id.radio85:
-                if (checked) No8 = "201 - 250 บาท"; break;
+                if (checked) No8 = "5"; break;
             case R.id.radio86:
-                if (checked) No8 = "251 - 300 บาท"; break;
+                if (checked) No8 = "6"; break;
             case R.id.radio87:
-                if (checked) No8 = "มากกว่า 300 บาท"; break;
+                if (checked) No8 = "7"; break;
 
             //ข้อ 9
             case R.id.radio91:
                 if (checked) No9 = "ใช้"; break;
             case R.id.radio92:
                 if (checked) No9 = "ไม่ใช้"; break;
-
-            //ข้อ 10
-            case R.id.radio10_1:
-                if (checked) No10 = "บ้าน"; break;
-            case R.id.radio10_2:
-                if (checked) No10 = "หอ"; break;
 
         }
 

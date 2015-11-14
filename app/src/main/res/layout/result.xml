@@ -82,4 +82,5 @@
         android:text="Large Text"
         android:id="@+id/show10"
         android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

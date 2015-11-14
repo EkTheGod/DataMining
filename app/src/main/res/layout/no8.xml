@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="#f1efef">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8/9"
+        android:id="@+id/num"
+        android:layout_gravity="center_horizontal"
+        android:textSize="50dp"
+        android:textColor="#010101" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/pic"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/moneycar" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pic"
+        android:background="#1976d2"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="8.ค่าใช้จ่ายในการเดินทางไป-กลับบ้าน/ครั้ง"
+            android:id="@+id/text"
+            android:textSize="17dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp">
+
+        <RadioButton
+            android:id="@+id/r1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="น้อยกว่า 50 บาท"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101" />
+
+        <RadioButton
+            android:id="@+id/r3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="101 - 150 บาท"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101"
+            android:layout_alignTop="@+id/group"
+            android:layout_toEndOf="@+id/group" />
+
+        <RadioButton
+            android:id="@+id/r5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="201 - 250 บาท"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101" />
+
+        <RadioButton
+            android:id="@+id/r7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="มากกว่า 300 บาท"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101" />
+
+
+    </RadioGroup>
+
+        <RadioButton
+            android:id="@+id/r2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="51 - 100 บาท"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101"
+            android:layout_alignTop="@+id/group"
+            android:layout_alignStart="@+id/r4" />
+
+        <RadioButton
+            android:id="@+id/r4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="151 - 200 บาท"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101"
+            android:layout_below="@+id/r2"
+            android:layout_toEndOf="@+id/group"
+            android:layout_marginStart="59dp" />
+
+        <RadioButton
+            android:id="@+id/r6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="251 - 300 บาท"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101"
+            android:layout_below="@+id/r4"
+            android:layout_alignStart="@+id/r4" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/back"
+            android:layout_marginLeft="40dp"
+            android:textSize="20dp"
+            android:background="@drawable/backbutton"
+            android:layout_marginRight="40dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/next"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="40dp"
+            android:textSize="20dp"
+            android:background="@drawable/nextbutton"
+            android:layout_marginLeft="40dp" />
+    </RelativeLayout>
+</LinearLayout>

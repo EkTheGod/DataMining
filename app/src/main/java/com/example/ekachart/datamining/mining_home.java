@@ -3,15 +3,15 @@ package com.example.ekachart.datamining;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class mining_home extends AppCompatActivity {
-    private Button start,about;
+    private Button start,object,about;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,16 @@ public class mining_home extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), survey.class);
+                Intent i = new Intent(getApplicationContext(), no7.class);
+                startActivity(i);
+            }
+        });
+
+        object = (Button)findViewById(R.id.object);
+        object.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), objective.class);
                 startActivity(i);
             }
         });
@@ -30,7 +39,7 @@ public class mining_home extends AppCompatActivity {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), name.class);
+                Intent i = new Intent(getApplicationContext(), com.example.ekachart.datamining.about.class);
                 startActivity(i);
             }
         });

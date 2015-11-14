@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1efef"
+    android:weightSum="1">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7/9"
+        android:id="@+id/num"
+        android:layout_gravity="center_horizontal"
+        android:textSize="50dp"
+        android:textColor="#010101" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/pic"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/time" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pic"
+        android:background="#1976d2"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="7.ระยะเวลาในการเดินทางไป-กลับบ้าน/ครั้ง"
+            android:id="@+id/text"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:layout_gravity="center_horizontal">
+
+        <RadioGroup
+        android:id="@+id/group"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp">
+
+            <RadioButton
+                android:id="@+id/r1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="น้อยกว่า  30 นาที"
+                android:onClick="onRadioButtonClicked"
+                android:textColor="#010101"
+                android:textSize="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
+
+
+            <RadioButton
+                android:id="@+id/r3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 ชั่วโมง - 1 ชั่วโมงครึ่ง"
+                android:onClick="onRadioButtonClicked"
+                android:textColor="#010101"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/r5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 ชั่วโมงครึ่ง - 3 ชั่วโมง"
+                android:onClick="onRadioButtonClicked"
+                android:textColor="#010101"
+                android:textSize="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+        </RadioGroup>
+
+        <RadioButton
+            android:id="@+id/r2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 - 60 นาที"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101"
+            android:textSize="15dp"
+            android:layout_alignTop="@+id/group"
+            android:layout_toEndOf="@+id/group" />
+
+        <RadioButton
+            android:id="@+id/r4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 ชั่วโมงครึ่ง - 2 ชั่วโมง"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101"
+            android:textSize="15dp"
+            android:layout_below="@+id/r2"
+            android:layout_toEndOf="@+id/group" />
+
+        <RadioButton
+            android:id="@+id/r6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="มากกว่า 3 ชั่วโมง"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="#010101"
+            android:textSize="15dp"
+            android:layout_below="@+id/r4"
+            android:layout_toEndOf="@+id/group" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/back"
+            android:layout_marginLeft="40dp"
+            android:textSize="20dp"
+            android:background="@drawable/backbutton"
+            android:layout_marginRight="40dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/next"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="40dp"
+            android:textSize="20dp"
+            android:background="@drawable/nextbutton"
+            android:layout_marginLeft="40dp" />
+    </RelativeLayout>
+</LinearLayout>

@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by Ekachart on 10/11/2558.
+ * Created by Ekachart on 11/11/2558.
  */
-public class name extends Activity {
+public class objective extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.name);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.objective);
 
     }
 }
