@@ -32,6 +32,7 @@ public class delayed extends Activity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), no1.class);
                 startActivity(i);
+                finish();
             }
         });
     }

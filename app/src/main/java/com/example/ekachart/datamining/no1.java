@@ -122,6 +122,8 @@ public class no1 extends Activity {
         dialog.setNegativeButton("ตกลง",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                Intent j = new Intent(getApplicationContext(), delayed.class);
+                startActivity(j);
                 finish();
             }
         }).show();

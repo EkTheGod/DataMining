@@ -26,9 +26,9 @@ public class no7 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.no7);
 
+        getvalue();
         init();
         setFont();
-        getvalue();
         buttonClick();
     }
 
@@ -147,6 +147,8 @@ public class no7 extends Activity {
         dialog.setNegativeButton("ตกลง",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                Intent j = new Intent(getApplicationContext(), delayed.class);
+                startActivity(j);
                 finish();
             }
         }).show();

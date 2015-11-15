@@ -1,6 +1,8 @@
 package com.example.ekachart.datamining;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -27,12 +29,16 @@ public class result extends Activity {
         getvalue();
         setFont();
 
-        //calDormitory();
-        //calHome();
-        //getResult();
+        calDormitory();
+        calHome();
+        getResult();
 
+        Toast.makeText(result.this, String.valueOf(sumdormitory),Toast.LENGTH_SHORT).show();
+        Toast.makeText(result.this, String.valueOf(sumhome),Toast.LENGTH_SHORT).show();
+
+        //home();
         buttonClick();
-        home();
+
 
     }
 
@@ -95,89 +101,87 @@ public class result extends Activity {
     }
 
     private void getResult() {
-        if(sumdormitory > sumhome)
-            t10.setText("อยู่หอเถอะ");
-        else
-            t10.setText("กลับบ้านไป๋");
+        if(sumdormitory > sumhome)  { t3.setText("หอ");  image.setBackground(this.getResources().getDrawable(R.drawable.hor1));}
+        else                        { t3.setText("บ้าน");   t5.setText("เหมาะสำหรับอยู่บ้านค่ะ");}
     }
 
 
     private void calDormitory() {
 
         //no1
-        double i1 = 1/(1.1516*(Math.sqrt(2*Math.PI)));
-        double i2 = Math.pow(2.7183, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 2.2759) / 1.1516, 2));
+        double i1 = 1/(1.15155278*(Math.sqrt(2*Math.PI)));
+        double i2 = Math.pow(2.718281828, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 2.27586207) / 1.15155278, 2));
         sumdormitory = sumdormitory + i1*i2;
         //Toast.makeText(result.this, String.valueOf(i2),Toast.LENGTH_SHORT).show();
 
         //no2
-        if(rcv2=="1")
-            sumdormitory = sumdormitory+0.2333 ;
+        if(rcv2.equals("1"))
+            sumdormitory = sumdormitory+0.23333333 ;
         else
-            sumdormitory = sumdormitory+0.7667 ;
+            sumdormitory = sumdormitory+0.76666667 ;
 
         //no3
-        i1 = 1/(1.0057*(Math.sqrt(2*Math.PI)));
-        i2 = Math.pow(2.7183, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 1.6207) / 1.0057, 2));
+        i1 = 1/(1.00573071*(Math.sqrt(2*Math.PI)));
+        i2 = Math.pow(2.718281828, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 1.62068966) /1.00573071, 2));
         sumdormitory = sumdormitory + i1*i2;
 
         //no4
-        i1 = 1/(0.8202*(Math.sqrt(2*Math.PI)));
-        i2 = Math.pow(2.7183, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 4.4483) / 0.8202, 2));
+        i1 = 1/(0.82019283*(Math.sqrt(2*Math.PI)));
+        i2 = Math.pow(2.718281828, (-0.5) * Math.pow((Double.parseDouble(rcv1) -4.44827586) /0.82019283, 2));
         sumdormitory = sumdormitory + i1*i2;
 
         //no5
-        if(rcv5=="1")
-            sumdormitory = sumdormitory + 0.2787 ;
-        if(rcv5=="2")
-            sumdormitory = sumdormitory + 0.2623 ;
-        if(rcv5=="3")
-            sumdormitory = sumdormitory + 0.4590 ;
+        if(rcv5.equals("1"))
+            sumdormitory = sumdormitory + 0.27868852 ;
+        if(rcv5.equals("2"))
+            sumdormitory = sumdormitory + 0.26229508 ;
+        if(rcv5.equals("3"))
+            sumdormitory = sumdormitory + 0.45901639 ;
 
         //no6
-        if(rcv6=="1")
-            sumdormitory = sumdormitory + 0.0645 ;
-        if(rcv6=="2")
-            sumdormitory = sumdormitory + 0.3226 ;
-        if(rcv6=="3")
-            sumdormitory = sumdormitory + 0.3387 ;
-        if(rcv6=="4")
-            sumdormitory = sumdormitory + 0.2742 ;
+        if(rcv6.equals("1"))
+            sumdormitory = sumdormitory + 0.06451613 ;
+        if(rcv6.equals("2"))
+            sumdormitory = sumdormitory + 0.32258065 ;
+        if(rcv6.equals("3"))
+            sumdormitory = sumdormitory + 0.33870968 ;
+        if(rcv6.equals("4"))
+            sumdormitory = sumdormitory + 0.27419355 ;
 
         //no7
-        if(rcv7=="1")
-            sumdormitory = sumdormitory+0.0156   ;
-        if(rcv7=="2")
-            sumdormitory = sumdormitory+0.0156   ;
-        if(rcv7=="3")
-            sumdormitory = sumdormitory+0.0781   ;
-        if(rcv7=="4")
+        if(rcv7.equals("1"))
+            sumdormitory = sumdormitory+0.015625     ;
+        if(rcv7.equals("2"))
+            sumdormitory = sumdormitory+0.015625   ;
+        if(rcv7.equals("3"))
+            sumdormitory = sumdormitory+0.078125   ;
+        if(rcv7.equals("4"))
             sumdormitory = sumdormitory+0.25     ;
-        if(rcv7=="5")
-            sumdormitory = sumdormitory+0.3594   ;
-        if(rcv7=="6")
-            sumdormitory = sumdormitory+0.2813   ;
+        if(rcv7.equals("5"))
+            sumdormitory = sumdormitory+0.359375  ;
+        if(rcv7.equals("6"))
+            sumdormitory = sumdormitory+0.28125   ;
 
         //no8
-        if(rcv8=="1")
-            sumdormitory = sumdormitory+0.0615   ;
-        if(rcv8=="2")
-            sumdormitory = sumdormitory+0.2308   ;
-        if(rcv8=="3")
-            sumdormitory = sumdormitory+0.1692   ;
-        if(rcv8=="4")
-            sumdormitory = sumdormitory+0.1538   ;
-        if(rcv8=="5")
-            sumdormitory = sumdormitory+0.0923   ;
-        if(rcv8=="6")
-            sumdormitory = sumdormitory+0.0615   ;
-        if(rcv8=="7")
-            sumdormitory = sumdormitory+0.2308   ;
+        if(rcv8.equals("1"))
+            sumdormitory = sumdormitory+0.06153846   ;
+        if(rcv8.equals("2"))
+            sumdormitory = sumdormitory+0.23076923   ;
+        if(rcv8.equals("3"))
+            sumdormitory = sumdormitory+0.16923077   ;
+        if(rcv8.equals("4"))
+            sumdormitory = sumdormitory+0.15384615   ;
+        if(rcv8.equals("5"))
+            sumdormitory = sumdormitory+0.09230769   ;
+        if(rcv8.equals("6"))
+            sumdormitory = sumdormitory+0.06153846   ;
+        if(rcv8.equals("7"))
+            sumdormitory = sumdormitory+0.23076923   ;
 
         //no9
-        if(rcv9=="1")
+        if(rcv9.equals("1"))
             sumdormitory = sumdormitory+0.35  ;
-        if(rcv9=="2")
+        if(rcv9.equals("2"))
             sumdormitory = sumdormitory+0.65  ;
 
     }
@@ -185,81 +189,99 @@ public class result extends Activity {
     private void calHome() {
 
         //no1
-        double i1 = 1/(1.1606*(Math.sqrt(2*Math.PI)));
-        double i2 = Math.pow(2.7183, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 2.3276) / 1.1606, 2));
+        double i1 = 1/(1.16057957*(Math.sqrt(2*Math.PI)));
+        double i2 = Math.pow(2.718281828, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 2.32758621) / 1.16057957, 2));
         sumhome = sumhome + i1*i2;
         //Toast.makeText(result.this, String.valueOf(i2),Toast.LENGTH_SHORT).show();
 
         //no2
-        if(rcv2=="1")
-            sumhome = sumhome+0.3333 ;
+        if(rcv2.equals("1"))
+            sumhome = sumhome+0.33333333 ;
         else
-            sumhome = sumhome+0.6666 ;
+            sumhome = sumhome+0.66666667 ;
 
         //no3
-        i1 = 1/(0.9264*(Math.sqrt(2*Math.PI)));
-        i2 = Math.pow(2.7183, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 1.8103) / 0.9264, 2));
+        i1 = 1/(0.92635669*(Math.sqrt(2*Math.PI)));
+        i2 = Math.pow(2.718281828, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 1.81034483) / 0.92635669, 2));
         sumhome = sumhome + i1*i2;
 
         //no4
-        i1 = 1/(0.6738*(Math.sqrt(2*Math.PI)));
-        i2 = Math.pow(2.7183, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 4.3965) / 0.6738, 2));
+        i1 = 1/(.67381228*(Math.sqrt(2*Math.PI)));
+        i2 = Math.pow(2.718281828, (-0.5) * Math.pow((Double.parseDouble(rcv1) - 4.39655172) / .67381228, 2));
         sumhome = sumhome + i1*i2;
 
         //no5
-        if(rcv5=="1")
-            sumhome = sumhome + 0.8196 ;
-        if(rcv5=="2")
-            sumhome = sumhome + 0.1475 ;
-        if(rcv5=="3")
-            sumhome = sumhome + 0.0327 ;
+        if(rcv5.equals("1"))
+            sumhome = sumhome + 0.81967213 ;
+        if(rcv5.equals("2"))
+            sumhome = sumhome + 0.14754098 ;
+        if(rcv5.equals("3"))
+            sumhome = sumhome + 0.03278689 ;
 
         //no6
-        if(rcv6=="1")
-            sumhome = sumhome + 0.0967 ;
-        if(rcv6=="2")
-            sumhome = sumhome + 0.6129 ;
-        if(rcv6=="3")
-            sumhome = sumhome + 0.1935 ;
-        if(rcv6=="4")
-            sumhome = sumhome + 0.0967 ;
+        if(rcv6.equals("1"))
+            sumhome = sumhome + 0.09677419 ;
+        if(rcv6.equals("2"))
+            sumhome = sumhome + 0.61290323 ;
+        if(rcv6.equals("3"))
+            sumhome = sumhome + 0.19354839 ;
+        if(rcv6.equals("4"))
+            sumhome = sumhome + 0.09677419 ;
 
         //no7
-        if(rcv7=="1")
-            sumhome = sumhome+0.1406   ;
-        if(rcv7=="2")
-            sumhome = sumhome+0.3593   ;
-        if(rcv7=="3")
+        if(rcv7.equals("1"))
+            sumhome = sumhome+0.140625     ;
+        if(rcv7.equals("2"))
+            sumhome = sumhome+0.359375     ;
+        if(rcv7.equals("3"))
             sumhome = sumhome+0.3750   ;
-        if(rcv7=="4")
-            sumhome = sumhome+0.0625   ;
-        if(rcv7=="5")
-            sumhome = sumhome+0.0156   ;
-        if(rcv7=="6")
-            sumhome = sumhome+0.0468    ;
+        if(rcv7.equals("4"))
+            sumhome = sumhome+0.0625       ;
+        if(rcv7.equals("5"))
+            sumhome = sumhome+0.015625     ;
+        if(rcv7.equals("6"))
+            sumhome = sumhome+0.046875      ;
 
         //no8
-        if(rcv8=="1")
-            sumhome = sumhome+0.3538   ;
-        if(rcv8=="2")
-            sumhome = sumhome+0.3846   ;
-        if(rcv8=="3")
-            sumhome = sumhome+0.1384   ;
-        if(rcv8=="4")
-            sumhome = sumhome+0.0461   ;
-        if(rcv8=="5")
-            sumhome = sumhome+0.0307   ;
-        if(rcv8=="6")
-            sumhome = sumhome+0.0307   ;
-        if(rcv8=="7")
-            sumhome = sumhome+0.0153   ;
+        if(rcv8.equals("1"))
+            sumhome = sumhome+0.35384615   ;
+        if(rcv8.equals("2"))
+            sumhome = sumhome+0.38461538   ;
+        if(rcv8.equals("3"))
+            sumhome = sumhome+0.13846154   ;
+        if(rcv8.equals("4"))
+            sumhome = sumhome+0.04615385   ;
+        if(rcv8.equals("5"))
+            sumhome = sumhome+0.03076923   ;
+        if(rcv8.equals("6"))
+            sumhome = sumhome+0.03076923   ;
+        if(rcv8.equals("7"))
+            sumhome = sumhome+0.01538462   ;
 
         //no9
-        if(rcv9=="1")
-            sumhome = sumhome+0.5167  ;
-        if(rcv9=="2")
-            sumhome = sumhome+0.4833  ;
+        if(rcv9.equals("1"))
+            sumhome = sumhome+0.51666667  ;
+        if(rcv9.equals("2"))
+            sumhome = sumhome+0.48333333  ;
+    }
 
+    @Override
+    public void onBackPressed() {
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("ออกจากแบบสอบถาม");
+        dialog.setPositiveButton("ยกเลิก",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        dialog.setNegativeButton("ตกลง",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent j = new Intent(getApplicationContext(), delayed.class);
+                startActivity(j);
+                finish();
+            }
+        }).show();
     }
 
 }

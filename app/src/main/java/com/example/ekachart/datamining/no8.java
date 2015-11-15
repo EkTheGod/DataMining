@@ -20,12 +20,14 @@ public class no8 extends Activity {
     private Button next,back;
     private String No1 ="",No2="",No3="",No4="",No5="",No6="",No7="",No8="";
     private TextView num,text;
+    private RadioButton r1,r2,r3,r4,r5,r6,r7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.no8);
         init();
+        setFont();
         getvalue();
         buttonClick();
     }
@@ -34,6 +36,10 @@ public class no8 extends Activity {
         final Typeface type = Typeface.createFromAsset(getAssets(), "SukhumvitSet.ttc");
         num.setTypeface(type);  text.setTypeface(type);
         next.setTypeface(type); back.setTypeface(type);
+        r1.setTypeface(type);   r2.setTypeface(type);
+        r3.setTypeface(type);   r4.setTypeface(type);
+        r5.setTypeface(type);   r6.setTypeface(type);
+        r7.setTypeface(type);
     }
 
     private void getvalue() {
@@ -51,6 +57,13 @@ public class no8 extends Activity {
         text = (TextView) findViewById(R.id.text);
         next = (Button) findViewById(R.id.next);
         back = (Button) findViewById(R.id.back);
+        r1 = (RadioButton)findViewById(R.id.r1);
+        r2 = (RadioButton)findViewById(R.id.r2);
+        r3 = (RadioButton)findViewById(R.id.r3);
+        r4 = (RadioButton)findViewById(R.id.r4);
+        r5 = (RadioButton)findViewById(R.id.r5);
+        r6 = (RadioButton)findViewById(R.id.r6);
+        r7 = (RadioButton)findViewById(R.id.r7);
     }
 
     public void onRadioButtonClicked(View view) {
@@ -142,6 +155,8 @@ public class no8 extends Activity {
         dialog.setNegativeButton("ตกลง",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                Intent j = new Intent(getApplicationContext(), delayed.class);
+                startActivity(j);
                 finish();
             }
         }).show();

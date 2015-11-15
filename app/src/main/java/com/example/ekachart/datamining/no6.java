@@ -25,6 +25,7 @@ public class no6 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.no6);
+
         init();
         setFont();
         getvalue();
@@ -135,6 +136,8 @@ public class no6 extends Activity {
         dialog.setNegativeButton("ตกลง",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                Intent j = new Intent(getApplicationContext(), delayed.class);
+                startActivity(j);
                 finish();
             }
         }).show();

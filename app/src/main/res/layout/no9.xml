@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:text="ไม่ใช้"
             android:onClick="onRadioButtonClicked"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="50dp"
             android:textColor="#010101"
             android:textSize="20dp"
             android:layout_marginRight="50dp" />
